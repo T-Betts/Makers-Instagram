@@ -1,0 +1,15 @@
+inherit_gem:
+  rubocop-rails:
+    - config/rails.yml
+
+Metrics/BlockLength:
+  Max: 40
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 15
+
+Metrics/AbcSize:
+  Max: 20
