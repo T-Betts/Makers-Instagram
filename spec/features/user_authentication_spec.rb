@@ -29,4 +29,19 @@ RSpec.feature "Authentication" do
     click_button "Log in"
     expect(page).to have_selector("input[type=submit][value='Logout']")
   end
+
+  scenario "users can change thier passwords" do
+    sign_up
+    click_button "Edit registration"
+    fill_in "Password", with: "newpassword"
+    fill_in "Password confirmation", with: "newpassword"
+    fill_in "Current password", with: "password123"
+    click_button "Update"
+    click_button "Logout"
+    click_button "Login"
+    fill_in "Email", with: "hello@live.com"
+    fill_in "Password", with: "newpassword"
+    click_button "Log in"
+    expect(page).to have_selector("input[type=submit][value='Logout']")
+  end
 end
