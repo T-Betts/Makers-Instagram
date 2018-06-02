@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <div id='banner'>
+      <div id='banner_text'>
+        <h1 id='welcome_header'>Picture Rails</h1>
+      </div>
+      <div id='banner_button'>
+        <%= render 'welcome/sign_up' %>
+        <%= render 'welcome/log_in_and_out' %>
+      </div>
+    </div>
     <%= yield %>
   </body>
 </html>
