@@ -32,7 +32,7 @@ RSpec.feature "Authentication" do
 
   scenario "users can change thier passwords" do
     sign_up
-    click_button "Edit registration"
+    click_button "Edit"
     fill_in "Password", with: "newpassword"
     fill_in "Password confirmation", with: "newpassword"
     fill_in "Current password", with: "password123"
@@ -47,7 +47,7 @@ RSpec.feature "Authentication" do
 
   scenario "users can cancel their account" do
     sign_up
-    click_button "Edit registration"
+    click_button "Edit"
     click_button "Cancel my account"
     click_button "Login"
     fill_in "Email", with: "hello@live.com"
