@@ -11,7 +11,7 @@ RSpec.feature "Authentication" do
 
   scenario "users can register" do
     sign_up
-    expect(page).to have_content("Logged in as: hello@live.com")
+    expect(page).to have_content("Logged in as: Tom123")
   end
 
   scenario "users can log out" do
