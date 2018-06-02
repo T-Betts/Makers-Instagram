@@ -55,4 +55,11 @@ RSpec.feature "Authentication" do
     click_button "Log in"
     expect(page).to have_selector("input[type=submit][value='Log in']")
   end
+
+  scenario "users can navigate to the home page" do
+    sign_up
+    click_button "Edit"
+    click_button "Home"
+    expect(page).not_to have_content("Edit User")
+  end
 end
