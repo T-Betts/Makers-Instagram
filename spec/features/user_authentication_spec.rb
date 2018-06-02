@@ -44,4 +44,15 @@ RSpec.feature "Authentication" do
     click_button "Log in"
     expect(page).to have_selector("input[type=submit][value='Logout']")
   end
+
+  scenario "users can cancel their account" do
+    sign_up
+    click_button "Edit registration"
+    click_button "Cancel my account"
+    click_button "Login"
+    fill_in "Email", with: "hello@live.com"
+    fill_in "Password", with: "password123"
+    click_button "Log in"
+    expect(page).to have_selector("input[type=submit][value='Log in']")
+  end
 end
