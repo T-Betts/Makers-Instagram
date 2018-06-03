@@ -6,6 +6,7 @@ ruby "2.5.0"
 gem "bootstrap"
 gem "jquery-rails"
 gem "devise"
+gem "dotenv-rails"
 # AWS S3 Bucket
 gem "aws-sdk", "~> 2"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
