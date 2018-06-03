@@ -1,4 +1,7 @@
 <% if user_signed_in? %>
   <h1 id="welcome_header"><%= current_user.username %>'s Profile Page</h1>
+  <% current_user.pictures.each do |picture| %>
+      <%= image_tag picture.image.url(:medium)  %>
+  <% end %>
   <%= button_to('Upload Picture', new_picture_path, {method: :get}) %>
 <% end %>
