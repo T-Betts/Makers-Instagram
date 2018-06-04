@@ -1,7 +1,13 @@
-<% if user_signed_in? %>
-  <h1 id="welcome_header"><%= current_user.username %>'s Profile Page</h1>
-  <% current_user.pictures.each do |picture| %>
-      <%= image_tag picture.image.url(:medium)  %>
-  <% end %>
-  <%= button_to('Upload Picture', new_picture_path, {method: :get}) %>
-<% end %>
+<h1 id="welcome_header"><%= current_user.username %>'s Profile Page</h1>
+<div id="picture_deck">
+  <div id="album_div">
+    <% current_user.pictures.each do |picture| %>
+      <div id="image_div">
+        <%= image_tag picture.image.url(:medium)  %>
+      </div>
+    <% end %>
+  </div>
+  <div id="upload_button">
+    <%= button_to('Upload Picture', new_picture_path, {method: :get}) %>
+  </div>
+</div>
