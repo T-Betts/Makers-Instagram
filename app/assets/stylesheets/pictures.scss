@@ -1,3 +1,23 @@
-// Place all the styles related to the Pictures controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div#picture_deck {
+
+}
+
+div#album_div {
+  padding-left: 30px;
+  padding-right: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 15px;
+}
+
+div#image_div {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+}
+
+div#upload_button {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+}
