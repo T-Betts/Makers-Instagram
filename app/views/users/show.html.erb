@@ -7,7 +7,9 @@
       </div>
     <% end %>
   </div>
-  <div id="upload_button">
-    <%= button_to('Upload Picture', new_picture_path, {method: :get}) %>
-  </div>
+  <% if @user == current_user %>
+    <div id="upload_button">
+      <%= button_to('Upload Picture', new_picture_path, {method: :get}) %>
+    </div>
+  <% end %>
 </div>
