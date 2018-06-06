@@ -1,7 +1,7 @@
 <h1 id="welcome_header"><%= @user.username %>'s Profile Page</h1>
 <div id="picture_deck">
   <div id="album_div">
-    <% @user.pictures.each do |picture| %>
+    <% @user.pictures.reverse.each do |picture| %>
       <div id="image_div">
         <%= image_tag picture.image.url(:medium)  %>
       </div>
