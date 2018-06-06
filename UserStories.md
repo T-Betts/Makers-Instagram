@@ -34,6 +34,12 @@ I would like to be able to delete a picture.
 ```
 
 ```
+As a user,
+so that I can see what other users are up to,
+I would like to be able to view their profiles.
+```
+
+```
 As a User,
 so that I can let other users know what I think of their pictures,
 I would like to be able to comment on pictures.
