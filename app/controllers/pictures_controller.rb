@@ -11,6 +11,13 @@ class PicturesController < ApplicationController
     redirect_to welcome_index_url
   end
 
+  def destroy
+    @picture = Picture.find(params[:id])
+    if @picture.present?
+      @picture.destroy
+    end
+  end
+
   def picture_params
     params.require(:picture).permit(:image)
   end
