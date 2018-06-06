@@ -27,3 +27,5 @@
 
 /coverage
 /.ENV
+
+/public/system/pictures/*
