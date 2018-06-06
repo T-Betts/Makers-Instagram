@@ -3,9 +3,10 @@
 require "rails_helper"
 
 RSpec.feature "Profile Page" do
-  scenario "After logging in, users see their profile page" do
+  scenario "After logging in, users can click a button and see their profile page" do
     visit("/")
     sign_up
+    click_button "Profile"
     expect(page).to have_content("Tom123's Profile Page")
   end
 end
