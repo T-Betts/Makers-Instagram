@@ -16,6 +16,7 @@ class PicturesController < ApplicationController
     if @picture.present?
       @picture.destroy
     end
+    redirect_back(fallback_location: user_url)
   end
 
   def picture_params
