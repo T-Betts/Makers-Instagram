@@ -5,7 +5,7 @@
       <div id="image_div">
         <%= image_tag picture.image.url(:medium)  %>
         <% if @user == current_user %>
-          <%= button_to('Delete', picture_path(current_user.id), {method: :delete}) %>
+          <%= button_to('Delete', picture_path(picture), {method: :delete}) %>
         <% end %>
       </div>
     <% end %>
