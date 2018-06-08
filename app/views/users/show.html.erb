@@ -7,6 +7,7 @@
         <% if @user == current_user %>
           <%= button_to('Delete', picture_path(picture), {method: :delete}) %>
         <% end %>
+        <%= button_to('Comment', new_picture_comment_path(picture), {method: :get}) %>
       </div>
     <% end %>
   </div>
