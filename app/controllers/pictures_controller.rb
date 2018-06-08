@@ -8,7 +8,7 @@ class PicturesController < ApplicationController
 
   def create
     @picture = Picture.create(picture_params.merge(user_id: current_user.id))
-    redirect_to welcome_index_url
+    redirect_to user_url(current_user.id)
   end
 
   def destroy
