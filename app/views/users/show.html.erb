@@ -4,7 +4,9 @@
     <% @user.pictures.reverse.each do |picture| %>
       <div id="image_div">
         <%= image_tag picture.image.url(:medium)  %>
-        <%= button_to('Delete', picture_path(picture), {method: :delete}) %>
+        <% if @user == current_user %>
+          <%= button_to('Delete', picture_path(current_user.id), {method: :delete}) %>
+        <% end %>
       </div>
     <% end %>
   </div>
