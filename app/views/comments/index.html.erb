@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+  <%= image_tag @picture.image.url(:large)  %>
   <% @picture.comments.each do |comment| %>
     <%= comment.body %></br>
   <% end %>
