@@ -10,7 +10,7 @@ RSpec.feature "Picture Comments" do
     page.attach_file("picture_image", Rails.root + "app/assets/images/another_cat.jpeg")
     click_button "Post"
     click_button "Comment"
-    fill_in "body", with: "Nice Picture!"
+    fill_in "comment[body]", with: "Nice Picture!"
     click_button "Comment"
     expect(page).to have_content("Nice Picture!")
   end
