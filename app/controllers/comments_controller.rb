@@ -15,6 +15,12 @@ class CommentsController < ApplicationController
     redirect_to picture_comments_url
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_back(fallback_location: picture_comments_url)
+  end
+
   def comment_params
     params.require(:comment).permit(:author, :body, :comment_id, :user_id)
   end
