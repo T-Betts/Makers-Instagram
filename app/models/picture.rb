@@ -1,6 +1,6 @@
 class Picture < ApplicationRecord
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   # This method associates the attribute ":avatar" with a file attachment
   has_attached_file :image, styles: {
     thumb: "100x100>",
