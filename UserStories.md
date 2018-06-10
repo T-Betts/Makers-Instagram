@@ -1,7 +1,7 @@
 ## User Stories
 ```
 As a User,
-so that I can begin using Makers-Instagram,
+so that I can begin using Picture Rails,
 I would like to be able to sign up.
 ```
 
