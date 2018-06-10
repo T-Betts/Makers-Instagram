@@ -9,9 +9,7 @@ class CommentsController < ApplicationController
 
   def create
     @picture = Picture.find(params[:picture_id])
-    @comment = @picture.comments.create(
-      comment_params.merge(author: current_user.username, user_id: current_user.id)
-    )
+    @comment = @picture.comments.create(comment_params.merge(author: current_user.username, user_id: current_user.id))
     redirect_to picture_comments_url
   end
 
@@ -19,6 +17,17 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     redirect_back(fallback_location: picture_comments_url)
+  end
+
+  def edit
+    @picture = Picture.find(params[:picture_id])
+    @comment = @picture.comments.find(params[:id])
+  end
+
+  def update
+    @comment = Comment.find(params[:id])
+    @comment.update(comment_params.merge(author: current_user.username, user_id: current_user.id))
+    redirect_to picture_comments_url
   end
 
   def comment_params

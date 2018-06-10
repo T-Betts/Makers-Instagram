@@ -4,6 +4,7 @@
   <div>
     <%= comment.body %></br>
     <%= button_to('Delete', picture_comment_path(comment.picture_id, comment.id), {method: :delete}) %>
+    <%= button_to('Edit Comment', edit_picture_comment_path(comment.picture_id, comment.id), {method: :get}) %>
   </div>
   <% end %>
 <% end %>
