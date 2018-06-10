@@ -21,6 +21,11 @@ class CommentsController < ApplicationController
     redirect_back(fallback_location: picture_comments_url)
   end
 
+  def edit
+    @picture = Picture.find(params[:picture_id])
+    @comment = @picture.comments.find(params[:id])
+  end
+
   def comment_params
     params.require(:comment).permit(:author, :body, :comment_id, :user_id)
   end

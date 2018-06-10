@@ -4,6 +4,8 @@ class PicturesController < ApplicationController
   end
 
   def show
+    @picture = Picture.find(params[:id])
+    @comment = @picture.comments.build
   end
 
   def create
