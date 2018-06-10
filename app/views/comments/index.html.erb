@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
   <%= image_tag @picture.image.url(:large)  %>
   <% @picture.comments.each do |comment| %>
+  <div>
     <%= comment.body %></br>
+    <%= button_to('Delete', picture_comment_path(comment.picture_id, comment.id), {method: :delete}) %>
+  </div>
   <% end %>
 <% end %>
